@@ -1,9 +1,7 @@
-Shader "Hidden/If"
+Shader "Hidden/None"
 {
     Properties
     {
-        [HideInInspector] _MainTex ("Texture", 2D) = "white" {}
-        _IfParam ("IfParam", Vector) = (1, 1, 1, 1)
     }
     SubShader
     {
@@ -38,27 +36,9 @@ Shader "Hidden/If"
                 return o;
             }
 
-            float4 _IfParam;
             fixed4 frag (const v2f i) : SV_Target
             {
-                fixed4 col;
-                if(_IfParam.x > 0.5)
-                {
-                    col.x = _IfParam.x;
-                }
-                if(_IfParam.y > 0.5)
-                {
-                    col.y = _IfParam.y;
-                }
-                if(_IfParam.z > 0.5)
-                {
-                    col.z = _IfParam.z;
-                }
-                if(_IfParam.w > 0.5)
-                {
-                    col.w = _IfParam.w;
-                }
-                return col;
+                return fixed4(1,1,1,1);
             }
             ENDCG
         }

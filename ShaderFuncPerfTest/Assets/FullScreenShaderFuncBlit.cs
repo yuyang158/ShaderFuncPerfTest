@@ -13,7 +13,7 @@ public class FullScreenShaderFuncBlit : MonoBehaviour {
 		if( SwitchTestShader.Selection == null ) {
 			return;
 		}
-		Graphics.Blit(src, m_2048Texture, SwitchTestShader.Selection);
+		Graphics.Blit(null, m_2048Texture, SwitchTestShader.Selection);
 		Graphics.Blit(m_2048Texture, dest);
 	}
 }
